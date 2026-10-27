@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktik JavaScript Sederhana</title>
+</head>
+<body>
+
+    <h1>Belajar JavaScript</h1>
+
+    <label for="nama">Masukkan Nama:</label>
+    <input type="text" id="nama" value="Raihan Akhdan Fadhillah">
+    <button onclick="sapaNama()">Klik Saya</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function sapaNama() {
+            let nama = document.getElementById("nama").value;
+
+            if (nama.trim() === "") {
+                alert("Silakan masukkan nama terlebih dahulu!");
+                return;
+            }
+
+            alert("Halo, " + nama + "!");
+
+            document.getElementById("hasil").innerHTML =
+                "Selamat belajar JavaScript, " + nama + "!<br>" +
+                "Hobi kamu: Gaming";
+        }
+    </script>
+
+</body>
+</html>
