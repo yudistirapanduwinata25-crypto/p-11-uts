@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#26382e">
+    <title>KOPI SENJA | Temukan Tenangmu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="#beranda" class="brand nav-link">
+            <span class="brand-icon">☕</span>
+            <span>KOPI<span class="brand-light">SENJA</span>
+                <small>COFFEE & SLOW LIVING</small>
+            </span>
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Buka navigasi">
+            ☰
+        </button>
+
+        <nav class="nav-menu" id="nav-menu">
+            <a href="#beranda" class="nav-link active">Beranda</a>
+            <a href="#menu-kopi" class="nav-link">Menu Kopi</a>
+            <a href="#tentang" class="nav-link">Tentang</a>
+        </nav>
+
+        <button class="cart-nav" id="go-to-cart">
+            <span>Keranjang</span>
+            <span class="cart-badge" id="cart-count">0</span>
+        </button>
+    </header>
+
+    <main>
+        <!-- BERANDA -->
+        <section class="slide active" id="beranda">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        YOUR DAILY COFFEE RITUAL
+                    </span>
+
+                    <h1>Temukan tenangmu<br>di setiap <em>tegukan.</em></h1>
+
+                    <p class="hero-description">
+                        Secangkir kopi yang diracik dengan hati, untuk menemani
+                        cerita, jeda, dan momen sederhana dalam harimu.
+                    </p>
+
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" data-goto="menu-kopi">
+                            Jelajahi Menu <span>↗</span>
+                        </button>
+                        <button class="btn btn-outline" data-goto="tentang">
+                            Cerita Kami
+                        </button>
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="note-star">✳</span>
+                        <span>Diracik segar, dinikmati perlahan.</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1100&q=85"
+                            alt="Secangkir kopi di kedai kopi"
+                        >
+                        <div class="image-label">
+                            <span>OUR SIGNATURE</span>
+                            <strong>Slow down. Sip up.</strong>
+                        </div>
+                    </div>
+                    <div class="floating-note">
+                        <span class="floating-icon">✦</span>
+                        <div>
+                            <strong>Made with care</strong>
+                            <small>Every cup, every day.</small>
+                        </div>
+                    </div>
+                    <span class="hero-decoration">KS.</span>
+                </div>
+            </div>
+
+            <div class="benefit-strip">
+                <div><span>01</span> Biji kopi pilihan</div>
+                <div><span>02</span> Diracik saat dipesan</div>
+                <div><span>03</span> Rasa yang berkesan</div>
+            </div>
+
+            <section class="featured-section">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">PILIHAN BARISTA</span>
+                        <h2>Favorit untuk <em>hari ini.</em></h2>
+                    </div>
+                    <button class="text-link" data-goto="menu-kopi">
+                        Lihat semua menu ↗
+                    </button>
+                </div>
+
+                <div class="featured-grid">
+                    <article class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80" alt="Es kopi susu">
+                        <div class="feature-info">
+                            <div><h3>Senja Latte</h3><p>Espresso, susu, gula aren.</p></div>
+                            <strong>Rp 22.000</strong>
+                        </div>
+                    </article>
+                    <article class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=700&q=80" alt="Cappuccino">
+                        <div class="feature-info">
+                            <div><h3>Velvet Cappuccino</h3><p>Espresso dengan foam lembut.</p></div>
+                            <strong>Rp 25.000</strong>
+                        </div>
+                    </article>
+                    <article class="feature-card">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=700&q=80" alt="Kopi hitam">
+                        <div class="feature-info">
+                            <div><h3>Midnight Americano</h3><p>Karakter kopi yang bersih.</p></div>
+                            <strong>Rp 18.000</strong>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </section>
+
+        <!-- MENU KOPI -->
+        <section class="slide page-section" id="menu-kopi">
+            <div class="page-intro">
+                <span class="eyebrow">BREWED FOR YOUR MOMENT</span>
+                <h1>Menu yang punya <em>cerita.</em></h1>
+                <p>Pilih teman terbaik untuk menemani harimu.</p>
+            </div>
+
+            <div class="menu-toolbar">
+                <div class="category-list" id="category-list">
+                    <button class="category-btn active" data-category="Semua">Semua</button>
+                    <button class="category-btn" data-category="Coffee">Coffee</button>
+                    <button class="category-btn" data-category="Non-Coffee">Non-Coffee</button>
+                    <button class="category-btn" data-category="Tea">Tea</button>
+                </div>
+
+                <label class="search-box">
+                    <span>⌕</span>
+                    <input type="search" id="menu-search" placeholder="Cari minuman...">
+                </label>
+            </div>
+
+            <div class="menu-grid" id="menu-grid">
+                <!-- Produk dibuat oleh script.js -->
+            </div>
+        </section>
+
+        <!-- TENTANG -->
+        <section class="slide page-section" id="tentang">
+            <div class="about-layout">
+                <div class="about-photo">
+                    <img
+                        src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=85"
+                        alt="Suasana interior kedai kopi"
+                    >
+                    <div class="about-photo-caption">
+                        <span>EST. WITH LOVE</span>
+                        <strong>Take a little pause.</strong>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <span class="eyebrow">CERITA KOPI SENJA</span>
+                    <h1>Bukan sekadar kopi, tapi <em>sebuah jeda.</em></h1>
+
+                    <p>
+                        KOPI SENJA hadir untuk mengingatkan kita bahwa hidup
+                        tidak selalu harus terburu-buru. Ada cerita yang perlu
+                        didengar, ada pikiran yang perlu beristirahat, dan ada
+                        momen kecil yang layak dinikmati.
+                    </p>
+
+                    <p>
+                        Setiap cangkir kami siapkan dengan bahan pilihan dan
+                        perhatian pada setiap detail, supaya waktu sederhanamu
+                        terasa lebih istimewa.
+                    </p>
+
+                    <div class="about-values">
+                        <div><strong>01.</strong><span>Bahan pilihan</span></div>
+                        <div><strong>02.</strong><span>Diracik sepenuh hati</span></div>
+                        <div><strong>03.</strong><span>Suasana hangat</span></div>
+                    </div>
+
+                    <button class="btn btn-primary" data-goto="menu-kopi">
+                        Temukan Kopi Favoritmu ↗
+                    </button>
+                </div>
+            </div>
+
+            <div class="contact-strip">
+                <div><span class="eyebrow">KUNJUNGI KAMI</span><h2>Waktunya rehat sejenak.</h2></div>
+                <div><span>JAM OPERASIONAL</span><strong>Setiap hari · 09.00–22.00</strong></div>
+                <div><span>HUBUNGI</span><strong>Informasi melalui WhatsApp</strong></div>
+            </div>
+        </section>
+
+        <!-- KERANJANG -->
+        <section class="cart-section" id="keranjang">
+            <div class="cart-panel">
+                <div class="section-heading cart-heading">
+                    <div>
+                        <span class="eyebrow">YOUR ORDER</span>
+                        <h2>Keranjang <em>pesanan.</em></h2>
+                    </div>
+                    <span class="cart-count-label"><span id="cart-count-label">0</span> item</span>
+                </div>
+
+                <div id="cart-items" class="cart-items">
+                    <p class="empty-cart">Keranjang masih kosong. Yuk, pilih kopi favoritmu! ☕</p>
+                </div>
+
+                <div class="cart-bottom">
+                    <div class="cart-total-row">
+                        <span>Total pembayaran</span>
+                        <strong id="cart-total">Rp 0</strong>
+                    </div>
+                    <p class="cart-disclaimer">Total dihitung otomatis berdasarkan jumlah pesanan.</p>
+                    <button class="btn btn-primary checkout-button" id="checkout-btn">
+                        Lanjut ke Checkout <span>→</span>
+                    </button>
+                    <button class="continue-shopping" data-goto="menu-kopi">← Lanjut memilih menu</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal-overlay" id="checkout-overlay">
+        <div class="modal checkout-modal">
+            <button class="modal-close" id="close-checkout" aria-label="Tutup">×</button>
+
+            <span class="eyebrow">ALMOST THERE</span>
+            <h2>Selesaikan <em>pesananmu.</em></h2>
+            <p class="modal-subtitle">Pastikan detail pesananmu sudah benar.</p>
+
+            <div class="checkout-summary">
+                <div class="summary-title">Ringkasan pesanan</div>
+                <div id="checkout-summary-items"></div>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <strong id="checkout-total">Rp 0</strong>
+                </div>
+            </div>
+
+            <form id="checkout-form">
+                <label for="customer-name">Nama pelanggan</label>
+                <input id="customer-name" name="customer-name" type="text" placeholder="Masukkan nama kamu" required maxlength="80">
+
+                <label for="customer-phone">Nomor WhatsApp</label>
+                <input id="customer-phone" name="customer-phone" type="tel" placeholder="Contoh: 081234567890" required maxlength="20">
+
+                <label for="order-note">Catatan pesanan <span class="optional">(opsional)</span></label>
+                <textarea id="order-note" name="order-note" placeholder="Contoh: less sugar, less ice..." rows="2" maxlength="250"></textarea>
+
+                <label for="payment-method">Metode pembayaran</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="">Pilih metode pembayaran</option>
+                    <option value="Tunai saat pengambilan">Tunai saat pengambilan</option>
+                    <option value="Transfer bank (simulasi)">Transfer bank (simulasi)</option>
+                    <option value="QRIS (simulasi)">QRIS (simulasi)</option>
+                </select>
+
+                <button type="submit" class="btn btn-primary checkout-submit">
+                    Buat Pesanan <span>→</span>
+                </button>
+                <p class="form-note">Pembayaran online belum diproses secara nyata.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- STRUK MODAL -->
+    <div class="modal-overlay" id="receipt-overlay">
+        <div class="modal receipt-modal">
+            <div class="receipt-top">
+                <span class="receipt-check">✓</span>
+                <span class="eyebrow">ORDER CONFIRMED</span>
+                <h2>Terima kasih <em>sudah memilih kami.</em></h2>
+                <p>Pesananmu sudah tercatat di halaman ini.</p>
+            </div>
+
+            <div id="receipt-details" class="receipt-details"></div>
+
+            <div class="receipt-actions no-print">
+                <button class="btn btn-outline" id="print-receipt">Cetak Struk</button>
+                <button class="btn btn-primary" id="finish-order">Selesai</button>
+            </div>
+            <p class="form-note no-print">Ini adalah konfirmasi demo, bukan bukti pembayaran.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="#beranda" class="brand nav-link">
+            <span class="brand-icon">☕</span>
+            <span>KOPI<span class="brand-light">SENJA</span><small>COFFEE & SLOW LIVING</small></span>
+        </a>
+        <p>Pelan-pelan saja. Nikmati setiap tegukan.</p>
+        <span class="footer-copy">© 2026 KOPI SENJA</span>
+    </footer>
+
+</body>
+</html>
