@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack | Daftar Tugas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand"><div class="brand-icon"><i data-lucide="graduation-cap"></i></div><div><h2>EduTrack<span>.</span></h2><small>Student workspace</small></div></div>
+        <div class="sidebar-label">MENU UTAMA</div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link"><i data-lucide="layout-dashboard"></i><span>Dashboard</span></a>
+            <a href="jadwal.html" class="nav-link"><i data-lucide="calendar-days"></i><span>Jadwal Kuliah</span></a>
+            <a href="nilai.html" class="nav-link"><i data-lucide="chart-no-axes-combined"></i><span>Nilai Akademik</span></a>
+            <a href="tugas.html" class="nav-link active"><i data-lucide="clipboard-list"></i><span>Daftar Tugas</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="sidebar-help"><div class="help-icon"><i data-lucide="book-open"></i></div><h4>Belajar lebih teratur</h4><p>Kelola aktivitas akademikmu dalam satu tempat.</p><a href="jadwal.html">Lihat jadwal <i data-lucide="arrow-up-right"></i></a></div>
+            <button class="nav-link theme-toggle" id="themeToggle"><i data-lucide="moon"></i><span>Mode gelap</span></button>
+            <div class="sidebar-profile"><div class="avatar">YP</div><div class="profile-info"><strong>Yudistira P.</strong><small>Mahasiswa</small></div><i data-lucide="more-horizontal"></i></div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu" id="mobileMenu"><i data-lucide="menu"></i></button>
+            <div class="breadcrumb"><span>Workspace</span><i data-lucide="chevron-right"></i><strong>Daftar Tugas</strong></div>
+            <div class="topbar-right"><div class="today-date" id="currentDate"></div><button class="icon-button"><i data-lucide="bell"></i></button></div>
+        </header>
+
+        <section class="page-content">
+            <div class="welcome-section">
+                <div><span class="eyebrow">TASK MANAGEMENT</span><h1>Daftar tugas</h1><p>Catat, atur, dan selesaikan semua tanggung jawab akademikmu.</p></div>
+                <button class="button button-dark" id="addTaskButton"><i data-lucide="plus"></i> Tambah tugas</button>
+            </div>
+
+            <div class="stats-grid task-stats">
+                <article class="stat-card"><div class="stat-top"><div class="stat-icon olive"><i data-lucide="layers"></i></div><span class="stat-caption">Keseluruhan</span></div><h3 id="taskTotal">0</h3><p>Total tugas</p></article>
+                <article class="stat-card"><div class="stat-top"><div class="stat-icon sand"><i data-lucide="clock"></i></div><span class="stat-caption">Dalam proses</span></div><h3 id="taskPending">0</h3><p>Belum selesai</p></article>
+                <article class="stat-card"><div class="stat-top"><div class="stat-icon green"><i data-lucide="check-circle"></i></div><span class="stat-caption">Terselesaikan</span></div><h3 id="taskDone">0</h3><p>Tugas selesai</p></article>
+                <article class="stat-card"><div class="stat-top"><div class="stat-icon dark"><i data-lucide="percent"></i></div><span class="stat-caption">Pencapaian</span></div><h3 id="taskPercent">0%</h3><p>Progres tugas</p></article>
+            </div>
+
+            <section class="panel">
+                <div class="panel-heading">
+                    <div><span class="eyebrow">YOUR WORKSPACE</span><h2>Semua tugas</h2></div>
+                    <span class="period-pill">Daftar aktivitas</span>
+                </div>
+
+                <div class="task-toolbar">
+                    <div class="search-box"><i data-lucide="search"></i><input type="text" id="taskSearch" placeholder="Cari nama tugas atau mata kuliah..."></div>
+                    <select id="taskFilter" class="filter-select">
+                        <option value="all">Semua status</option>
+                        <option value="pending">Belum selesai</option>
+                        <option value="done">Selesai</option>
+                    </select>
+                </div>
+
+                <div id="taskList" class="task-list"></div>
+            </section>
+
+            <footer class="footer"><span>© 2026 EduTrack Workspace</span><span>Designed for better learning.</span></footer>
+        </section>
+    </main>
+</div>
+
+<div class="modal-overlay" id="taskModal">
+    <div class="modal">
+        <div class="modal-heading">
+            <div><span class="eyebrow">TASK DETAILS</span><h2 id="modalTitle">Tambah tugas baru</h2></div>
+            <button class="icon-button" id="closeModal"><i data-lucide="x"></i></button>
+        </div>
+        <form id="taskForm">
+            <input type="hidden" id="taskId">
+            <label for="taskName">Nama tugas</label>
+            <input type="text" id="taskName" placeholder="Contoh: Membuat laporan praktikum" required>
+            <label for="taskCourse">Mata kuliah</label>
+            <input type="text" id="taskCourse" placeholder="Contoh: Pemrograman Web" required>
+            <label for="taskDate">Deadline</label>
+            <input type="date" id="taskDate" required>
+            <label for="taskDescription">Deskripsi</label>
+            <textarea id="taskDescription" rows="3" placeholder="Tambahkan keterangan tugas..."></textarea>
+            <div class="modal-actions">
+                <button type="button" class="button button-light" id="cancelModal">Batal</button>
+                <button type="submit" class="button button-dark">Simpan tugas</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

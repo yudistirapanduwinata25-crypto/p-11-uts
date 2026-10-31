@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack | Jadwal Kuliah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon"><i data-lucide="graduation-cap"></i></div>
+            <div><h2>EduTrack<span>.</span></h2><small>Student workspace</small></div>
+        </div>
+        <div class="sidebar-label">MENU UTAMA</div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link"><i data-lucide="layout-dashboard"></i><span>Dashboard</span></a>
+            <a href="jadwal.html" class="nav-link active"><i data-lucide="calendar-days"></i><span>Jadwal Kuliah</span></a>
+            <a href="nilai.html" class="nav-link"><i data-lucide="chart-no-axes-combined"></i><span>Nilai Akademik</span></a>
+            <a href="tugas.html" class="nav-link"><i data-lucide="clipboard-list"></i><span>Daftar Tugas</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="sidebar-help">
+                <div class="help-icon"><i data-lucide="book-open"></i></div>
+                <h4>Belajar lebih teratur</h4>
+                <p>Kelola aktivitas akademikmu dalam satu tempat.</p>
+                <a href="tugas.html">Kelola tugas <i data-lucide="arrow-up-right"></i></a>
+            </div>
+            <button class="nav-link theme-toggle" id="themeToggle"><i data-lucide="moon"></i><span>Mode gelap</span></button>
+            <div class="sidebar-profile">
+                <div class="avatar">YP</div>
+                <div class="profile-info"><strong>Yudistira P.</strong><small>Mahasiswa</small></div>
+                <i data-lucide="more-horizontal"></i>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu" id="mobileMenu"><i data-lucide="menu"></i></button>
+            <div class="breadcrumb"><span>Workspace</span><i data-lucide="chevron-right"></i><strong>Jadwal Kuliah</strong></div>
+            <div class="topbar-right"><div class="today-date" id="currentDate"></div><button class="icon-button"><i data-lucide="bell"></i></button></div>
+        </header>
+
+        <section class="page-content">
+            <div class="welcome-section">
+                <div><span class="eyebrow">ACADEMIC PLANNER</span><h1>Jadwal kuliah</h1><p>Atur waktu dan pantau agenda perkuliahanmu.</p></div>
+            </div>
+
+            <section class="panel">
+                <div class="panel-heading">
+                    <div><span class="eyebrow">MINGGU PERKULIAHAN</span><h2>Agenda mingguan</h2></div>
+                    <span class="period-pill">Semester Genap 2026/2027</span>
+                </div>
+                <div class="day-tabs" id="dayTabs">
+                    <button class="day-tab active" data-day="Senin">Senin</button>
+                    <button class="day-tab" data-day="Selasa">Selasa</button>
+                    <button class="day-tab" data-day="Rabu">Rabu</button>
+                    <button class="day-tab" data-day="Kamis">Kamis</button>
+                    <button class="day-tab" data-day="Jumat">Jumat</button>
+                </div>
+                <div id="scheduleContainer" class="schedule-list schedule-page-list"></div>
+            </section>
+
+            <div class="info-grid">
+                <div class="info-card"><div class="stat-icon olive"><i data-lucide="calendar-check"></i></div><span>Total mata kuliah</span><strong>8 Mata Kuliah</strong></div>
+                <div class="info-card"><div class="stat-icon sand"><i data-lucide="clock"></i></div><span>Total waktu belajar</span><strong>16 Jam / Minggu</strong></div>
+                <div class="info-card"><div class="stat-icon green"><i data-lucide="map-pin"></i></div><span>Lokasi kampus</span><strong>Gedung Utama</strong></div>
+            </div>
+
+            <footer class="footer"><span>© 2026 EduTrack Workspace</span><span>Designed for better learning.</span></footer>
+        </section>
+    </main>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

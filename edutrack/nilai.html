@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack | Nilai Akademik</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon"><i data-lucide="graduation-cap"></i></div>
+            <div><h2>EduTrack<span>.</span></h2><small>Student workspace</small></div>
+        </div>
+        <div class="sidebar-label">MENU UTAMA</div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link"><i data-lucide="layout-dashboard"></i><span>Dashboard</span></a>
+            <a href="jadwal.html" class="nav-link"><i data-lucide="calendar-days"></i><span>Jadwal Kuliah</span></a>
+            <a href="nilai.html" class="nav-link active"><i data-lucide="chart-no-axes-combined"></i><span>Nilai Akademik</span></a>
+            <a href="tugas.html" class="nav-link"><i data-lucide="clipboard-list"></i><span>Daftar Tugas</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <div class="sidebar-help"><div class="help-icon"><i data-lucide="book-open"></i></div><h4>Belajar lebih teratur</h4><p>Kelola aktivitas akademikmu dalam satu tempat.</p><a href="tugas.html">Kelola tugas <i data-lucide="arrow-up-right"></i></a></div>
+            <button class="nav-link theme-toggle" id="themeToggle"><i data-lucide="moon"></i><span>Mode gelap</span></button>
+            <div class="sidebar-profile"><div class="avatar">YP</div><div class="profile-info"><strong>Yudistira P.</strong><small>Mahasiswa</small></div><i data-lucide="more-horizontal"></i></div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="mobile-menu" id="mobileMenu"><i data-lucide="menu"></i></button>
+            <div class="breadcrumb"><span>Workspace</span><i data-lucide="chevron-right"></i><strong>Nilai Akademik</strong></div>
+            <div class="topbar-right"><div class="today-date" id="currentDate"></div><button class="icon-button"><i data-lucide="bell"></i></button></div>
+        </header>
+
+        <section class="page-content">
+            <div class="welcome-section">
+                <div><span class="eyebrow">ACADEMIC PERFORMANCE</span><h1>Nilai akademik</h1><p>Pantau hasil belajar dan perkembangan indeks prestasimu.</p></div>
+            </div>
+
+            <div class="stats-grid grade-stats">
+                <article class="stat-card"><div class="stat-top"><div class="stat-icon olive"><i data-lucide="award"></i></div><span class="stat-caption">Kumulatif</span></div><h3>3.75</h3><p>Indeks prestasi</p><div class="stat-footer"><span class="positive-text">Sangat baik</span></div></article>
+                <article class="stat-card"><div class="stat-top"><div class="stat-icon sand"><i data-lucide="book-open"></i></div><span class="stat-caption">Semester ini</span></div><h3>8</h3><p>Mata kuliah</p><div class="stat-footer"><span>Terdaftar</span></div></article>
+                <article class="stat-card"><div class="stat-top"><div class="stat-icon green"><i data-lucide="check-circle"></i></div><span class="stat-caption">Kredit</span></div><h3>20</h3><p>Total SKS</p><div class="stat-footer"><span>Semester berjalan</span></div></article>
+                <article class="stat-card"><div class="stat-top"><div class="stat-icon dark"><i data-lucide="medal"></i></div><span class="stat-caption">Predikat</span></div><h3>A</h3><p>Nilai dominan</p><div class="stat-footer"><span class="positive-text">Memuaskan</span></div></article>
+            </div>
+
+            <section class="panel chart-panel grade-chart-panel">
+                <div class="panel-heading"><div><span class="eyebrow">ACADEMIC REPORT</span><h2>Grafik perkembangan IP</h2></div><span class="period-pill">6 semester</span></div>
+                <div class="chart-container grade-chart"><canvas id="gradeChart"></canvas></div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-heading"><div><span class="eyebrow">HASIL PERKULIAHAN</span><h2>Daftar nilai mata kuliah</h2></div><span class="period-pill">Semester Genap</span></div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead><tr><th>No.</th><th>Mata Kuliah</th><th>SKS</th><th>Nilai Angka</th><th>Nilai Huruf</th><th>Status</th></tr></thead>
+                        <tbody>
+                            <tr><td>01</td><td>Pemrograman Web</td><td>3</td><td>90</td><td><span class="grade-badge">A</span></td><td><span class="status status-done">Sangat Baik</span></td></tr>
+                            <tr><td>02</td><td>Basis Data</td><td>3</td><td>88</td><td><span class="grade-badge">A</span></td><td><span class="status status-done">Sangat Baik</span></td></tr>
+                            <tr><td>03</td><td>Rekayasa Perangkat Lunak</td><td>3</td><td>85</td><td><span class="grade-badge">A</span></td><td><span class="status status-done">Sangat Baik</span></td></tr>
+                            <tr><td>04</td><td>Analisis Sistem Informasi</td><td>3</td><td>82</td><td><span class="grade-badge">A</span></td><td><span class="status status-done">Sangat Baik</span></td></tr>
+                            <tr><td>05</td><td>Manajemen Proyek TI</td><td>2</td><td>78</td><td><span class="grade-badge grade-b">B</span></td><td><span class="status status-done">Baik</span></td></tr>
+                            <tr><td>06</td><td>Interaksi Manusia Komputer</td><td>3</td><td>86</td><td><span class="grade-badge">A</span></td><td><span class="status status-done">Sangat Baik</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <footer class="footer"><span>© 2026 EduTrack Workspace</span><span>Designed for better learning.</span></footer>
+        </section>
+    </main>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

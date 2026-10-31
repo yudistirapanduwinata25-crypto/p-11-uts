@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack | Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="app-layout">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon"><i data-lucide="graduation-cap"></i></div>
+            <div>
+                <h2>EduTrack<span>.</span></h2>
+                <small>Student workspace</small>
+            </div>
+        </div>
+
+        <div class="sidebar-label">MENU UTAMA</div>
+
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link active">
+                <i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="jadwal.html" class="nav-link">
+                <i data-lucide="calendar-days"></i>
+                <span>Jadwal Kuliah</span>
+            </a>
+            <a href="nilai.html" class="nav-link">
+                <i data-lucide="chart-no-axes-combined"></i>
+                <span>Nilai Akademik</span>
+            </a>
+            <a href="tugas.html" class="nav-link">
+                <i data-lucide="clipboard-list"></i>
+                <span>Daftar Tugas</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-help">
+                <div class="help-icon"><i data-lucide="book-open"></i></div>
+                <h4>Belajar lebih teratur</h4>
+                <p>Kelola aktivitas akademikmu dalam satu tempat.</p>
+                <a href="tugas.html">Kelola tugas <i data-lucide="arrow-up-right"></i></a>
+            </div>
+
+            <button class="nav-link theme-toggle" id="themeToggle">
+                <i data-lucide="moon"></i>
+                <span>Mode gelap</span>
+            </button>
+
+            <div class="sidebar-profile">
+                <div class="avatar">YP</div>
+                <div class="profile-info">
+                    <strong>Yudistira P.</strong>
+                    <small>Mahasiswa</small>
+                </div>
+                <i data-lucide="more-horizontal"></i>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <button class="mobile-menu" id="mobileMenu"><i data-lucide="menu"></i></button>
+            <div class="breadcrumb">
+                <span>Workspace</span>
+                <i data-lucide="chevron-right"></i>
+                <strong>Dashboard</strong>
+            </div>
+            <div class="topbar-right">
+                <div class="today-date" id="currentDate"></div>
+                <button class="icon-button notification-button">
+                    <i data-lucide="bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+            </div>
+        </header>
+
+        <section class="page-content">
+
+            <div class="welcome-section">
+                <div>
+                    <span class="eyebrow">STUDENT OVERVIEW</span>
+                    <h1>Selamat datang, Yudistira <span>✦</span></h1>
+                    <p>Semua progres akademikmu, tersusun dalam satu ruang.</p>
+                </div>
+                <a href="tugas.html" class="button button-dark">
+                    <i data-lucide="plus"></i> Tambah tugas
+                </a>
+            </div>
+
+            <div class="hero-banner">
+                <div class="hero-content">
+                    <span class="hero-tag">SEMESTER GENAP 2026/2027</span>
+                    <h2>Small progress.<br><em>Big achievement.</em></h2>
+                    <p>Terus jaga konsistensi belajar dan selesaikan setiap target akademikmu.</p>
+                    <a href="nilai.html" class="hero-link">Lihat perkembangan <i data-lucide="arrow-up-right"></i></a>
+                </div>
+                <div class="hero-decoration">
+                    <div class="hero-circle circle-one"></div>
+                    <div class="hero-circle circle-two"></div>
+                    <div class="hero-orbit"></div>
+                    <div class="hero-symbol"><i data-lucide="graduation-cap"></i></div>
+                    <div class="hero-floating-card">
+                        <span>IPK Sementara</span>
+                        <strong>3.75</strong>
+                        <small><i data-lucide="trending-up"></i> Performa baik</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">RINGKASAN</span>
+                    <h2>Aktivitas akademik</h2>
+                </div>
+                <span class="muted-text">Semester berjalan</span>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <div class="stat-icon olive"><i data-lucide="book-open"></i></div>
+                        <span class="stat-caption">Semester ini</span>
+                    </div>
+                    <h3>8</h3>
+                    <p>Mata kuliah aktif</p>
+                    <div class="stat-footer"><span class="stat-line"></span><span>Terdaftar</span></div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <div class="stat-icon sand"><i data-lucide="clipboard-check"></i></div>
+                        <span class="stat-caption">Total tugas</span>
+                    </div>
+                    <h3 id="totalTasks">5</h3>
+                    <p>Tugas akademik</p>
+                    <div class="stat-footer"><span class="stat-line"></span><span id="pendingTasks">3 belum selesai</span></div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <div class="stat-icon green"><i data-lucide="check-circle-2"></i></div>
+                        <span class="stat-caption">Penyelesaian</span>
+                    </div>
+                    <h3 id="completionRate">40%</h3>
+                    <p>Progres tugas</p>
+                    <div class="progress-track"><div class="progress-fill" id="completionBar" style="width:40%"></div></div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <div class="stat-icon dark"><i data-lucide="award"></i></div>
+                        <span class="stat-caption">Akademik</span>
+                    </div>
+                    <h3>3.75</h3>
+                    <p>Indeks prestasi</p>
+                    <div class="stat-footer"><span class="positive-text"><i data-lucide="trending-up"></i> Sangat baik</span></div>
+                </article>
+            </div>
+
+            <div class="dashboard-grid">
+
+                <section class="panel chart-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <span class="eyebrow">PERFORMA</span>
+                            <h2>Perkembangan akademik</h2>
+                        </div>
+                        <span class="period-pill">6 bulan terakhir</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="academicChart"></canvas>
+                    </div>
+                    <div class="chart-bottom">
+                        <div><span class="legend-dot"></span> Indeks prestasi</div>
+                        <strong>Rata-rata 3.75</strong>
+                    </div>
+                </section>
+
+                <section class="panel task-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <span class="eyebrow">PRIORITAS</span>
+                            <h2>Tugas mendatang</h2>
+                        </div>
+                        <a href="tugas.html" class="text-link">Lihat semua <i data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div id="dashboardTaskList" class="dashboard-task-list"></div>
+                </section>
+
+            </div>
+
+            <section class="panel schedule-panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="eyebrow">AGENDA HARIAN</span>
+                        <h2>Jadwal perkuliahan</h2>
+                    </div>
+                    <a href="jadwal.html" class="text-link">Lihat jadwal <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="schedule-list">
+                    <div class="schedule-item">
+                        <div class="schedule-time"><strong>08:00</strong><span>09:40</span></div>
+                        <div class="schedule-indicator"></div>
+                        <div class="schedule-info">
+                            <strong>Pemrograman Web</strong>
+                            <span>Ruang Lab Komputer 02 · Pak Andi</span>
+                        </div>
+                        <span class="schedule-room">Lab 02</span>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time"><strong>10:00</strong><span>11:40</span></div>
+                        <div class="schedule-indicator sand-indicator"></div>
+                        <div class="schedule-info">
+                            <strong>Basis Data</strong>
+                            <span>Ruang B-203 · Bu Rina</span>
+                        </div>
+                        <span class="schedule-room">B-203</span>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time"><strong>13:00</strong><span>14:40</span></div>
+                        <div class="schedule-indicator dark-indicator"></div>
+                        <div class="schedule-info">
+                            <strong>Rekayasa Perangkat Lunak</strong>
+                            <span>Ruang A-105 · Pak Dimas</span>
+                        </div>
+                        <span class="schedule-room">A-105</span>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <span>© 2026 EduTrack Workspace</span>
+                <span>Designed for better learning.</span>
+            </footer>
+
+        </section>
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
