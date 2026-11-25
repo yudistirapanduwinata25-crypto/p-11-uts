@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VELORA | Premium Footwear</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <a href="#home" class="logo">VELORA<span>.</span></a>
+
+    <nav class="nav">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#koleksi" class="nav-link">Koleksi</a>
+      <a href="#tentang" class="nav-link">Tentang</a>
+      <a href="#kontak" class="nav-link">Kontak</a>
+    </nav>
+
+    <button class="cart-nav" onclick="navigateTo('keranjang')">
+      Keranjang <span id="cartCount">0</span>
+    </button>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </header>
+
+  <main>
+
+    <!-- HOME PAGE -->
+    <section id="home" class="page active">
+
+      <div class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">STEP INTO YOUR STYLE</p>
+          <h1>Walk With<br><span>Confidence.</span></h1>
+          <p class="hero-desc">
+            Temukan sepatu pilihan dengan desain modern,
+            kualitas premium, dan kenyamanan terbaik.
+          </p>
+          <button class="btn-primary" onclick="navigateTo('koleksi')">
+            Jelajahi Koleksi <span>→</span>
+          </button>
+        </div>
+
+        <div class="hero-image">
+          <img id="heroImage"
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1000"
+            alt="Sepatu VELORA">
+          <div class="hero-label">
+            <small>NEW COLLECTION</small>
+            <h3>Urban Runner</h3>
+          </div>
+        </div>
+
+        <button class="slider-btn prev" onclick="changeSlide(-1)">‹</button>
+        <button class="slider-btn next" onclick="changeSlide(1)">›</button>
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+
+      <section class="benefits">
+        <div><span>✦</span><h3>Premium Quality</h3><p>Material pilihan berkualitas.</p></div>
+        <div><span>◇</span><h3>Modern Design</h3><p>Desain stylish untuk setiap gaya.</p></div>
+        <div><span>↗</span><h3>Fast Delivery</h3><p>Pengiriman aman dan cepat.</p></div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">OUR SELECTION</p>
+            <h2>Produk Pilihan</h2>
+          </div>
+          <button class="text-link" onclick="navigateTo('koleksi')">
+            Lihat Semua →
+          </button>
+        </div>
+        <div class="product-grid" id="featuredProducts"></div>
+      </section>
+
+      <section class="home-banner">
+        <div>
+          <p class="eyebrow">THE VELORA EXPERIENCE</p>
+          <h2>Every Step<br>Matters.</h2>
+          <p>Lengkapi penampilanmu dengan koleksi sepatu pilihan VELORA.</p>
+          <button class="btn-light" onclick="navigateTo('koleksi')">
+            Belanja Sekarang
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <!-- COLLECTION PAGE -->
+    <section id="koleksi" class="page">
+      <div class="page-banner">
+        <p class="eyebrow">DISCOVER YOUR STYLE</p>
+        <h1>Our Collection</h1>
+        <p>Koleksi sepatu pilihan untuk setiap langkahmu.</p>
+      </div>
+
+      <section class="section collection-section">
+        <div class="collection-toolbar">
+          <input type="search" id="searchInput" placeholder="Cari nama sepatu...">
+          <select id="sortSelect">
+            <option value="default">Urutkan Produk</option>
+            <option value="low">Harga Terendah</option>
+            <option value="high">Harga Tertinggi</option>
+            <option value="name">Nama A-Z</option>
+          </select>
+        </div>
+
+        <div class="category-list" id="categoryList">
+          <button class="category-btn active" data-category="Semua">Semua</button>
+          <button class="category-btn" data-category="Running">Running</button>
+          <button class="category-btn" data-category="Lifestyle">Lifestyle</button>
+          <button class="category-btn" data-category="Basket">Basket</button>
+          <button class="category-btn" data-category="Casual">Casual</button>
+          <button class="category-btn" data-category="Formal">Formal</button>
+        </div>
+
+        <p class="result-count" id="resultCount"></p>
+        <div class="product-grid" id="allProducts"></div>
+      </section>
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section id="tentang" class="page">
+      <div class="page-banner">
+        <p class="eyebrow">GET TO KNOW US</p>
+        <h1>About VELORA</h1>
+        <p>Lebih dari sekadar sepatu. Ini tentang gaya dan kepercayaan diri.</p>
+      </div>
+
+      <section class="about-content">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=1000" alt="Koleksi sepatu">
+        </div>
+        <div class="about-text">
+          <p class="eyebrow">OUR STORY</p>
+          <h2>Style Begins<br>With Every Step.</h2>
+          <p>
+            VELORA hadir sebagai pilihan untuk kamu yang mengutamakan
+            penampilan, kenyamanan, dan kualitas. Kami percaya bahwa
+            sepatu bukan hanya pelengkap, tetapi bagian dari identitas
+            dan gaya hidup.
+          </p>
+          <p>
+            Kami menghadirkan berbagai pilihan sepatu untuk aktivitas
+            sehari-hari, olahraga, hingga momen spesial.
+          </p>
+          <button class="btn-primary" onclick="navigateTo('koleksi')">
+            Lihat Koleksi →
+          </button>
+        </div>
+      </section>
+
+      <section class="benefits about-benefits">
+        <div><span>01</span><h3>Kualitas</h3><p>Memilih produk dengan kualitas terbaik.</p></div>
+        <div><span>02</span><h3>Kenyamanan</h3><p>Menemani aktivitas setiap hari.</p></div>
+        <div><span>03</span><h3>Gaya</h3><p>Desain modern untuk berbagai karakter.</p></div>
+      </section>
+    </section>
+
+    <!-- CONTACT PAGE -->
+    <section id="kontak" class="page">
+      <div class="page-banner">
+        <p class="eyebrow">WE ARE HERE FOR YOU</p>
+        <h1>Contact Us</h1>
+        <p>Hubungi kami untuk pertanyaan dan informasi pemesanan.</p>
+      </div>
+
+      <section class="contact-content">
+        <div class="contact-info">
+          <p class="eyebrow">GET IN TOUCH</p>
+          <h2>Let's Talk.</h2>
+          <p>Kami siap membantu kamu menemukan sepatu yang tepat.</p>
+
+          <div class="contact-item">
+            <span>✉</span>
+            <div><small>Email</small><p>velora.store@gmail.com</p></div>
+          </div>
+          <div class="contact-item">
+            <span>☎</span>
+            <div><small>WhatsApp</small><p>+62 812-3456-7890</p></div>
+          </div>
+          <div class="contact-item">
+            <span>⌖</span>
+            <div><small>Lokasi</small><p>Indonesia</p></div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3>Kirim Pesan</h3>
+          <input type="text" id="contactName" placeholder="Nama lengkap" required>
+          <input type="email" id="contactEmail" placeholder="Email" required>
+          <textarea id="contactMessage" rows="5" placeholder="Tulis pesan kamu..." required></textarea>
+          <button class="btn-primary" type="submit">Kirim Pesan →</button>
+        </form>
+      </section>
+    </section>
+
+    <!-- CART PAGE -->
+    <section id="keranjang" class="page">
+      <div class="page-banner">
+        <p class="eyebrow">YOUR SHOPPING BAG</p>
+        <h1>Keranjang Belanja</h1>
+        <p>Periksa kembali produk pilihanmu sebelum memesan.</p>
+      </div>
+
+      <section class="cart-section">
+        <div id="cartItems"></div>
+        <div class="cart-summary">
+          <h3>Ringkasan Belanja</h3>
+          <div class="summary-line">
+            <span>Total</span><strong id="cartTotal">Rp0</strong>
+          </div>
+          <button class="btn-primary full-btn" onclick="openCheckout()">
+            Lanjut Checkout →
+          </button>
+          <button class="continue-btn" onclick="navigateTo('koleksi')">
+            ← Lanjut Belanja
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <!-- CHECKOUT PAGE -->
+    <section id="checkout" class="page">
+      <div class="page-banner">
+        <p class="eyebrow">COMPLETE YOUR ORDER</p>
+        <h1>Checkout</h1>
+        <p>Isi informasi pengiriman untuk menyelesaikan pesanan.</p>
+      </div>
+
+      <section class="checkout-layout">
+        <form id="checkoutForm" class="checkout-form">
+          <h2>Informasi Pengiriman</h2>
+          <label>Nama Lengkap</label>
+          <input type="text" id="customerName" required placeholder="Nama penerima">
+
+          <label>Nomor WhatsApp</label>
+          <input type="tel" id="customerPhone" required placeholder="08xxxxxxxxxx">
+
+          <label>Alamat Lengkap</label>
+          <textarea id="customerAddress" rows="4" required placeholder="Masukkan alamat pengiriman"></textarea>
+
+          <label>Catatan Pesanan</label>
+          <textarea id="customerNote" rows="3" placeholder="Catatan tambahan (opsional)"></textarea>
+
+          <button class="btn-primary full-btn" type="submit">
+          Selesaikan Pembelian →
+          </button>
+        </form>
+
+        <div class="checkout-summary">
+          <h3>Pesanan Kamu</h3>
+          <div id="checkoutItems"></div>
+          <div class="summary-line">
+            <span>Total Pembayaran</span>
+            <strong id="checkoutTotal">Rp0</strong>
+          </div>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="logo">VELORA<span>.</span></a>
+    <p>Walk With Confidence. © 2026 VELORA Store.</p>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#koleksi">Koleksi</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
